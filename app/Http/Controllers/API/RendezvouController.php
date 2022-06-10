@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Rendezvous;
+use App\Models\Rendezvou;
 use Illuminate\Http\Request;
 
-class RendezvousController extends Controller
+class RendezvouController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class RendezvousController extends Controller
      */
     public function index()
     {
-        $rendezvous = Rendezvous::all();
+        $rendezvous = Rendezvou::all();
 
         return response()->json($rendezvous);
     }
@@ -29,7 +29,7 @@ class RendezvousController extends Controller
     public function store(Request $request)
     {
         //
-        $rendezvous = Rendezvous::created([
+        $rendezvous = Rendezvou::created([
             "date"=>$request->date,
             "libelle"=>$request->libelle,
             "type"=>$request->type
@@ -41,10 +41,10 @@ class RendezvousController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Rendezvous  $rendezvous
+     * @param  \App\Models\Rendezvou  $rendezvous
      * @return \Illuminate\Http\Response
      */
-    public function show(Rendezvous $rendezvous)
+    public function show(Rendezvou $rendezvous)
     {
         //
         return response()->json($rendezvous);
@@ -54,13 +54,13 @@ class RendezvousController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Rendezvous  $rendezvous
+     * @param  \App\Models\Rendezvou  $rendezvous
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rendezvous $rendezvous)
+    public function update(Request $request, Rendezvou $rendezvous)
     {
         //
-        $rendezvous = Rendezvous::updated([
+        $rendezvous = Rendezvou::updated([
             "date"=>$request->date,
             "libelle"=>$request->libelle,
             "type"=>$request->type
@@ -72,10 +72,10 @@ class RendezvousController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Rendezvous  $rendezvous
+     * @param  \App\Models\Rendezvou  $rendezvous
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rendezvous $rendezvous)
+    public function destroy(Rendezvou $rendezvous)
     {
         //
         $rendezvous->delete();

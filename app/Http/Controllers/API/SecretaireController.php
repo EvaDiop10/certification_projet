@@ -30,7 +30,7 @@ class SecretaireController extends Controller
     public function store(Request $request)
     {
         //On ajoute les information de la secretaire
-        $secretaire = Secretaire::created([
+        $secretaire = Secretaire::create([
             'nom'=>$request->nom,
             'prenom'=>$request->prenom
         ]);
@@ -52,14 +52,16 @@ class SecretaireController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Secretaire  $secretaire
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Secretaire $secretaire
+     * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Secretaire $secretaire)
+    public function update(Request $request, $id)
     {
         //
-        $secretaire = Secretaire::updated([
+            $secretaire = Secretaire::find($id)
+            ->update([
             "nom"=>$request->nom,
             "prenom"=>$request->prenom
         ]);

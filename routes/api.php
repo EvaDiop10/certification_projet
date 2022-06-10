@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\API\MedecinController;
 use App\Http\Controllers\API\PatientController;
-use App\Http\Controllers\API\RendezvousController;
+use App\Http\Controllers\API\RendezvouController;
 use App\Http\Controllers\API\SecretaireController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,5 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource("secretaires", SecretaireController::class);// Les routes "secretaire.*" de l'API
 Route::apiResource("patients",PatientController::class);
 Route::apiResource("agendas", AgendaController::class); // Les routes "agenda.*" de l'API
-Route::apiResource("rendez-vous",RendezvousController::class);
+Route::apiResource("rendez-vous",RendezvouController::class);
 Route::apiResource("medecins", MedecinController::class);
