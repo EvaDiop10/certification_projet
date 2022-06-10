@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Rendezvou extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $fillable =[
-        'nom',
-        'prenom'
+        "date",
+        "libelle",
+        "type",
+        "patients_id"
     ];
 }

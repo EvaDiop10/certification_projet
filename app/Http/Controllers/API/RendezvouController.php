@@ -29,10 +29,11 @@ class RendezvouController extends Controller
     public function store(Request $request)
     {
         //
-        $rendezvous = Rendezvou::created([
+        $rendezvous = Rendezvou::create([
             "date"=>$request->date,
             "libelle"=>$request->libelle,
-            "type"=>$request->type
+            "type"=>$request->type,
+            "patients_id"=>$request->patients_id
         ]);
 
         return response()->json($rendezvous, 201);
@@ -57,13 +58,14 @@ class RendezvouController extends Controller
      * @param  \App\Models\Rendezvou  $rendezvous
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rendezvou $rendezvous)
+    public function update(Request $request, $id)
     {
         //
-        $rendezvous = Rendezvou::updated([
+        $rendezvous = Rendezvou::find($id)->update([
             "date"=>$request->date,
             "libelle"=>$request->libelle,
-            "type"=>$request->type
+            "type"=>$request->type,
+            "patients_id"=>$request->patients_id
         ]);
 
         return response()->json();
