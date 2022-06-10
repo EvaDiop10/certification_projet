@@ -30,7 +30,7 @@ class MedecinController extends Controller
     public function store(Request $request)
     {
         //
-        $medecin = Medecin::created([
+        $medecin = Medecin::create([
             'nom'=>$request->nom,
             'prenom'=>$request->prenom,
             'specialite'=>$request->specialite,
@@ -58,10 +58,10 @@ class MedecinController extends Controller
      * @param  \App\Models\Medecin  $medecin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medecin $medecin)
+    public function update(Request $request,$id)
     {
         //
-        $medecin =Medecin::updated([
+        $medecin =Medecin::find($id)->update([
             "nom"=>$request->nom,
             "prenom"=>$request->prenom,
             "specialite"=>$request->specialite,

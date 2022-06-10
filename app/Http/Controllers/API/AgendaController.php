@@ -30,11 +30,13 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         //creation dun nouvel agenda
-                $agenda = Agenda::created([
+                $agenda = Agenda::create([
                    'datedebut' => $request->datedebut,
                     'datefin' => $request->datefin,
                     'heuredebut' => $request->heuredebut,
-                    'heurefin'=>$request->heurefin
+                    'heurefin'=>$request->heurefin,
+                    'rendezvous_id'=>$request->rendezvous_id,
+                    'medecins_id'=>$request->medecins_id
                 ]);
 
                 //On retourne l'agenda en JSON avec le statut creer
@@ -59,14 +61,16 @@ class AgendaController extends Controller
      * @param  \App\Models\Agenda  $agenda
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Agenda $agenda)
+    public function update(Request $request,  $id)
     {
         //On modifie les information de l'agenda
-        $agenda->update([
+        $agenda = Agenda::find($id)->update([
             "datedebut" => $request->datedebut,
             "datefin" => $request->datefin,
             "heuredebut" => $request->heuredebut,
-            "heurefin"=>$request->heurefin
+            "heurefin"=>$request->heurefin,
+            'rendezvous_id'=>$request->rendezvous_id,
+            'medecins_id'=>$request->medecins_id
 
         ]);
         return response()->json();
