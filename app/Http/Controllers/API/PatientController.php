@@ -30,14 +30,15 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         //
-        $patient = Patient::created([
+        $patient = Patient::create([
             "nom"=>$request->nom,
             "prenom"=>$request->prenom,
             "sexe"=>$request->sexe,
             "age"=>$request->age,
             "adresse"=>$request->adresse,
             "telephone"=>$request->telephone,
-            "fonction"=>$request->fonction
+            "fonction"=>$request->fonction,
+            "secretaires_id"=>$request->secretaires_id
 
         ]);
 
@@ -63,17 +64,18 @@ class PatientController extends Controller
      * @param  \App\Models\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Patient $patient)
+    public function update(Request $request, $id)
     {
         //
-        $patient = Patient::updated([
+        $patient = Patient::find($id)->update([
             "nom"=>$request->nom,
             "prenom"=>$request->prenom,
             "sexe"=>$request->sexe,
             "age"=>$request->age,
             "adresse"=>$request->adresse,
             "telephone"=>$request->telephone,
-            "fonction"=>$request->fonction
+            "fonction"=>$request->fonction,
+            "secretaires_id"=>$request->secretaires_id
         ]);
 
         return response()->json();
