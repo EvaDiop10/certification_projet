@@ -16,8 +16,7 @@ return new class extends Migration
         //
         Schema::create('agendas', function (Blueprint $table){
             $table->id();
-            $table->date('datedebut');
-            $table->date('datefin');
+            $table->date('jours');
             $table->time('heuredebut');
             $table->time('heurefin');
             $table->unsignedBigInteger('rendezvous_id');

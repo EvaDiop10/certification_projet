@@ -10,9 +10,9 @@ class Medecin extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable =[
-        'nom',
-        'prenom',
         'specialite',
-        'disponibilite'
+        'disponibilite',
+        'users_id',
+        'specialites_id'
     ];
 }

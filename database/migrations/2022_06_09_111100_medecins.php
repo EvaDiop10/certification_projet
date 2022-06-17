@@ -16,10 +16,13 @@ return new class extends Migration
         //
         Schema::create('medecins',function (Blueprint $table){
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('specialite');
             $table->boolean('disponibilite')->default(false);
+            $table->unsignedBigInteger('specialites_id');
+            $table->foreign('specialites_id')
+                ->references('id')
+                ->on('specialites')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('rendezvous', function (Blueprint $table){
             $table->id();
             $table->dateTime('date');
-            $table->string('libelle');
-            $table->string('type');
+            $table->string('description');
+            $table->enum('type',['Consultation','Visite médicale']);
             $table->unsignedBigInteger('patients_id');
             $table->foreign('patients_id')
                 ->references('id')

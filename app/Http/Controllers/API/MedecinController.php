@@ -31,10 +31,10 @@ class MedecinController extends Controller
     {
         //
         $medecin = Medecin::create([
-            'nom'=>$request->nom,
-            'prenom'=>$request->prenom,
             'specialite'=>$request->specialite,
-            'disponibilite'=>$request->disponibilite
+            'disponibilite'=>$request->disponibilite,
+             "users_id"=>$request->users_id,
+            "specialites_id"=>$request->specialites_id
         ]);
 
         return response()->json($medecin, 201);
@@ -62,10 +62,10 @@ class MedecinController extends Controller
     {
         //
         $medecin =Medecin::find($id)->update([
-            "nom"=>$request->nom,
-            "prenom"=>$request->prenom,
             "specialite"=>$request->specialite,
-            "disponibilite"=>$request->disponibilite
+            "disponibilite"=>$request->disponibilite,
+            "users_id"=>$request->users_id,
+            "specialites_id"=>$request->specialites_id
         ]);
 
         return response()->json();

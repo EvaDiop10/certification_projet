@@ -19,14 +19,14 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('sexe');
-            $table->integer('age');
+            $table->integer('date');
             $table->string('adresse');
             $table->string('telephone')->unique();
             $table->string('fonction');
-            $table->unsignedBigInteger('secretaires_id');
-            $table->foreign('secretaires_id')
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')
             ->references('id')
-                ->on('secretaires')
+                ->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
