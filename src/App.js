@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import ListPatient from "./components/ListPatient";
 import PatientAdd from "./components/PatientAdd";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
@@ -26,6 +27,30 @@ function App() {
             </div>
         </Router>
     );
+=======
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+>>>>>>> ba979d47f919e4998afd1673bfea14df5a76b81d
 }
 
 export default App;
