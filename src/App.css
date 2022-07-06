@@ -1,0 +1,21 @@
+.App{
+  background: #F0FBF4;
+}
+
+.dashboard{
+  background-color: #31B55D;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  min-height: 100% ;
+
+}
+.textNav{
+  font-size: 15px;
+}
+.accueil{
+  background: #F0FBF4;
+}
+.iconUser{
+  width: 100px;
+  color: #D14F4F;
+}
