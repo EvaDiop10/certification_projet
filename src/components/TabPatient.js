@@ -9,13 +9,20 @@ const TabPatient = (props) =>{
         e.preventDefault()
         axios.get(`http://127.0.0.1:8000/api/patients/${patient.id}`)
         navigate(`/patients/edit/${patient.id}/`)
-        console.log(patient)
     }
 
     const handleSupprimer = (e) => {
         e.preventDefault()
        axios.delete(`http://127.0.0.1:8000/api/patients/${patient.id}`)
     }
+
+    const handleSee = (e) =>{
+        e.preventDefault()
+        axios.get(`http://127.0.0.1:8000/api/patients/${patient.id}`)
+        navigate(`/patients/voir/${patient.id}`)
+    }
+
+
 
     return(
         <>
@@ -30,8 +37,8 @@ const TabPatient = (props) =>{
                 <button onClick={handleSupprimer} className="btn-supprimer btn fw-light text-danger" to={`patients/edit/${patient.id}`}>
                     <i className="bi  bi-trash-fill"></i>
                 </button>
-                <Link to={`patients/edit/${patient.id}`}>
-                    <i className=" btn border  bi bi-three-dots-vertical text-black"></i>
+                <Link to={`/voir/${patient.id}`} >
+                    <i onClick={handleSee}  className=" btn border  bi bi-three-dots-vertical text-black"></i>
                 </Link>
             </td>
         </tr>

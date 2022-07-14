@@ -1,5 +1,6 @@
 import PatientAdd from "./PatientAdd";
 import ListPatient from "./ListPatient";
+import PatientFiche from "./PatientFiche";
 
 const GestionPatient = () =>{
     return(
@@ -7,6 +8,8 @@ const GestionPatient = () =>{
         <div className=" ">
             <ListPatient/>
         </div>
+            <div>
+            </div>
         </div>
     )
 }

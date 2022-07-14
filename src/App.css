@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .App{
   background: #F0FBF4;
 }
@@ -20,7 +20,10 @@
   width: 100px;
   color: #D14F4F;
 }
-=======
+.fiche_patient{
+  background: rgba(183, 255, 152, 0.19);
+}
+
 .App {
   text-align: center;
 }
@@ -59,4 +62,4 @@
     transform: rotate(360deg);
   }
 }
->>>>>>> ba979d47f919e4998afd1673bfea14df5a76b81d
+

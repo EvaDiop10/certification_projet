@@ -28,12 +28,6 @@ const Dashboard = () =>{
                                 Tableau de bord
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/ajouter_patients" className="nav-link text-white textNav" >
-                                <i className="bi bi-file-earmark mx-3"></i>
-                                Ajouter Patients
-                            </Link>
-                        </li>
                         <li onClick={handleGestionPatient}>
                             <Link to="/gestion_patients" className="nav-link text-white textNav" >
                                 <i className="bi bi-file-earmark mx-3"></i>
@@ -41,7 +35,7 @@ const Dashboard = () =>{
                             </Link>
                         </li>
                         <li>
-                            <a href="#" className="nav-link text-white textNav">
+                            <a href="gestion_rendez-vous" className="nav-link text-white textNav">
                                 <i className="bi bi-calendar3  mx-3"></i>
                                 Gestion Rendez-vous
                             </a>

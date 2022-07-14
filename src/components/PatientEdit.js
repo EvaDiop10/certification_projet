@@ -1,6 +1,8 @@
 import axios from "axios";
 import  {useParams ,useNavigate} from 'react-router-dom'
 import {useEffect, useRef, useState} from "react";
+import PatientFiche from "./PatientFiche";
+
 
 
 const PatientEdit = () => {
@@ -47,7 +49,8 @@ const PatientEdit = () => {
     }
 
     return(
-        <div>
+        <div className="row">
+        <div className="col-4">
             <h3>Modifier Patient</h3>
             <form className="form-control bg-white border-0 rounded-3 shadow-sm" onSubmit={handleEdit} ref={formRef}>
                 <div className="row">
@@ -67,7 +70,7 @@ const PatientEdit = () => {
                             <option defaultValue={list.value} selected={patients.sexe == 'Femme' ? 'selected' : ''} >Femme</option>
                         </select>
                     </div>
-                    <div className="col-6">
+                    <div className="col-8">
                         <input type="date" className="input-group border border-success rounded-3 mb-3 p-1" placeholder="date de naissance" name="date_naissance" value={patients.date_naissance}/>
                     </div>
                 </div>
@@ -78,6 +81,10 @@ const PatientEdit = () => {
                 <input className="input-group border border-success rounded-3 mb-4 p-1" placeholder="User id" name="users_id" defaultValue={patients.users_id}/>
                 <input className="btn btn-success fw-light border-success text-white  border border-success rounded-3 mb-3" type="submit" defaultValue="Modifier Patient"/>
             </form>
+        </div>
+        <div className="col-7">
+            <PatientFiche/>
+        </div>
         </div>
     )
 }
