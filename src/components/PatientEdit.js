@@ -46,6 +46,7 @@ const PatientEdit = () => {
         const patient = Object.fromEntries(form.entries())
          axios.patch(`http://127.0.0.1:8000/api/patients/${id}`,patient)
              .then((res) => console.log(res))
+        navigate(`/patients/details/`)
     }
 
     return(

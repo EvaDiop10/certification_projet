@@ -6,6 +6,8 @@ import NavbarPatient from "./layout/NavbarPatient";
 import RdvAdd from "./RdvAdd"
 import FicheRdv from "./FicheRdv"
 import HeaderRdv from "../components/HeaderRdv"
+import Dashboard from "../components/layout/Dashboard"
+
 
 
 const Rdv = () =>{
@@ -15,15 +17,19 @@ const Rdv = () =>{
             .then((response)=>setData(response.data))
     },[])
     return(
-        <div className="row m-auto">
-            <div className="d-flex py-2 justify-content-between">
-                <h2>Gestion Rendez-vous</h2>
-                <div><HeaderRdv/></div>
+        <div className="row ">
+            <div className="col-2">
+                <Dashboard/>
+            </div>
+            <div className="col-4">
+              <div>
+                  <h2>Gestion Rendez-vous</h2>
+                  <RdvAdd/>
+              </div>
+
             </div>
             <div className="col-6">
-                <RdvAdd/>
-            </div>
-            <div className="col-6  h-25"   >
+                <FicheRdv/>
             </div>
         </div>
     )

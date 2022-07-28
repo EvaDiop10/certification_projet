@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import TabRdv from "./TabRdv";
+import TabRdvOpt from "./TabRdvOpt";
 import NavbarPatient from "./layout/NavbarPatient";
 
 const ListRdv = ()=>{
@@ -13,23 +13,25 @@ const ListRdv = ()=>{
 
     },[])
     return(
-        <div className="container-fluid py-5">
-            <table className="table mx-auto ">
+        <div className="bg-white p-1 rounded-3 shadow-sm">
+            <h4 className="text-bold">Liste de Rendez-vous</h4>
+            <table className="table  border-0">
                 <thead>
                 <tr>
-                    <th scope="col">NUMERO RDV</th>
-                    <th scope="col">DATE</th>
-                    <th scope="col">HEURE</th>
-                    <th scope="col">DESCRIPTION</th>
-                    <th scope="col">TYPE</th>
-                    <th scope="col">CONFIRMATION</th>
-                    <th scope="col">STATUT</th>
-                    <th scope="col">PATIENT_ID</th>
+                    <th scope="col">numéro</th>
+                    <th scope="col">date</th>
+                    <th scope="col">heure</th>
+                    <th scope="col">description</th>
+                    <th scope="col">type</th>
+                    <th scope="col">confirmation</th>
+                    <th scope="col">statut</th>
+                    <th scope="col">patient</th>
+                    <th scope="col">action</th>
                 </tr>
                 </thead>
                 <tbody className="mb-5 border-0 bg-white rounded-3" >
                 {data.map((rdv)=>(
-                        <TabRdv rdv={rdv} key={rdv.id}/>
+                        <TabRdvOpt rdv={rdv} key={rdv.id}/>
                     )
                 )}
                 </tbody>

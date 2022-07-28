@@ -1,53 +1,94 @@
 import {Link} from "react-router-dom";
 import logo from '../../src/asset/logon.svg'
 import ListRdv from '../components/ListRdv'
+import Dashboard from "../components/layout/Dashboard"
+import rdv from '../asset/rdv.png'
+import  patient from '../asset/patient.png'
+import doctor  from '../asset/doctor.png'
+import MedecinList from '../components/MedecinList'
+import UserCard from '../components/UserCard'
+import card_bg from "../asset/card_bg.png"
+
+
 const Accueil = () => {
     return(
             <div>
-                <div className="row d-flex justify-contend-around ">
-                    <div className="col-6">
-                        <p>Welcome to HostoDIGITAL</p>
+                <div className="row ">
+                    <div className="col-2 col-lg-2 col-md-2 col-sm-2">
+                        <Dashboard/>
                     </div>
-                    <div className="col-6">
-                        <button className="btn btn-success fw-light border-success text-white  border border-success rounded-3 mb-3">
-                            <Link to="/ajouter_patients" className="nav-link text-white textNav" >
-                                <i className="bi bi-file-earmark mx-3"></i>
-                                Ajouter Patients
-                            </Link>
-                        </button>
-                    </div>
-                </div>
-                <div className="d-flex flex-row justify-content-around">
-                    <div className="col-2">
-                        <div className="card">
-                            <img src={logo}/>
-                            <div className="card-tittle">Patients</div>
+                    <div className="col-7 col-lg-7 col-md-7 col-sm-7 my-3">
+                        <div className=" d-flex justify-content-between">
                             <div>
-                                <p>24</p>
+                                <h2 className='text-gray'> <strong >Bienvenue</strong>
+                                    <br/> Sur HostoDIGITAL
+                                </h2>
+                            </div>
+                            <div className="">
+                                <form className="d-flex ">
+                                    <input className="form-control  border-success me-2 " type="search" placeholder="Rechercher patient" aria-label="Search"/>
+                                    <button className="btn btn-outline-success border-5" type="submit">
+                                        <i className="bi bi-search"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-2">
-                        <div className="card">
-                            <img src={logo}/>
-                            <div className="card-tittle">Rendez-vous</div>
-                            <div>
-                                <p>24</p>
+                        <div className="d-flex flex-row justify-content-between my-4">
+                            <div className="col-3 col-lg-3 col-md-3 col-sm-3">
+                                <div className="card shadow-md border-0 ">
+                                    <img src={patient} className="card-img mx-5 my-3"/>
+                                    <div className="card-tittle">
+                                        <p className=" text-black  my-3 mb-3">
+                                            <Link to="/ajouter_patients" className="nav-link  textNav" >
+                                                Ajouter Patients
+                                            </Link>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                        </div >
-                    </div>
-                    <div className="col-2">
-                        <div className="card">
-                            <img src={logo}/>
-                            <div className="card-tittle">Médecin</div>
-                            <div>
-                                <p>24</p>
+                            <div className="col-3 col-lg-3 col-md-3 col-sm-3">
+                                <div className="card shadow-md border-0">
+                                    <img src={rdv} className="card-img mx-5 my-3"/>
+                                    <div className="card-tittle">
+                                        <p className=" text-black  my-3 mb-3">
+                                            <Link to="/ajouter_rendez-vous" className="nav-link  textNav" >
+                                                Ajouter Rendez-vous
+                                            </Link>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-3 col-lg-3 col-md-3 col-sm-3">
+                                <div className="card shadow-md border-0">
+                                    <img src={doctor} className="card-img mx-5 my-3"/>
+                                    <div className="card-tittle">
+                                        <p className=" text-black  my-3 mb-3">
+                                            <Link to="/medecins/list" className="nav-link  textNav" >
+                                                Liste Médecins
+                                            </Link>
+                                        </p>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
+                        <div className="row p-2 shadow-md border-0">
+                            <ListRdv/>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <ListRdv/>
+                    <div className="col-3 my-3 col-lg-3 col-md-3 col-sm-3">
+                        <div className="p-2 card cardUser"
+                            style={{
+                                backGroundImage : "card_bg"
+                            }}
+                        >
+                            <UserCard/>
+                        </div>
+                        <div className="border-0 card my-4">
+                            <h4 className="my-1">Liste des Médecins</h4>
+                            <MedecinList/>
+                        </div>
+                    </div>
                 </div>
 
 

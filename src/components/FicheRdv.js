@@ -28,7 +28,7 @@ const FicheRdv = ()=>{
 
     return(
         <div className="row">
-            <div className="col-8 p-4">
+            <div className="">
                 <h3>Fiche Rendez-vous</h3>
                 <div className="card p-4">
                     <h4>Dossier:DSN{rdv.id}</h4>

@@ -10,30 +10,36 @@ import PatientFiche from "./components/PatientFiche";
 import logo from './logo.svg';
 import GestionRdv from '../src/components/GestionRdv'
 import './App.css';
-import Rdv from "../src/components/Rdv"
+import RdvAdd from "../src/components/Rdv"
 import FicheRdv from "../src/components/FicheRdv"
+import Registrer from "../src/components/Registrer"
+import Login from "../src/components/Login"
+import  useAuth from "../src/components/useAuth"
+import RdvEdit from "../src/components/RdvEdit"
 
 function App() {
-    
+    // const {getToken} = useAuth();
+    // if(!getToken()){
+    //     return <LoginForm/>
 
     return (
         <Router>
             <div className="App row">
-                <div className="col-2">
-                    <Dashboard/>
-                </div>
-                <div className="col-10">
+                <div className="">
                     <Routes>
                         <Route exact path="/" element={<Accueil to="/ "/> }></Route>
+                        <Route path="/connexion" element={<Login to="/connexion"/>}></Route>
+                        <Route path="/inscription" element={<Registrer to="/inscription"/>}></Route>
                         <Route path="/gestion_patients" element={<GestionPatient to="gestion_patients"/> }></Route>
                         <Route path="/patients/list" element={<ListPatient to="/patients/list "/>}></Route>
+                        <Route path="/patients/details" element={<ListPatient to="/patients/details "/>}></Route>
                         <Route path="/ajouter_patients" element={<Patients to='ajouter_patients' /> }></Route>
-                        <Route path={`gestion_patients/edit/:id`} element={<PatientEdit to={`gestion_patients/edit/:id`} />}></Route>
+                        <Route path={`patients/details/edit/:id`} element={<PatientEdit to={`patients/details/edit/:id`} />}></Route>
                         <Route path={`/patients/voir/:id`} element={<PatientFiche to={`/patients/voir/:id`}/>} ></Route>
                         <Route path="/gestion_rendez-vous" element={<GestionRdv to="gestion_rendez-vous"/> }></Route>
-                        <Route path="/ajouter_rendez-vous" element={<Rdv to='ajouter_rendez-vous' /> }></Route>
+                        <Route path="/ajouter_rendez-vous" element={<RdvAdd to='ajouter_rendez-vous' /> }></Route>
+                        <Route path={`rendez-vous/edit/:id`} element={<RdvEdit to={`rendez-vous/edit/:id`} />}></Route>
                         <Route path={`/rendez-vous/voir/:id`} element={<FicheRdv to={`/rendez-vous/voir/:id`}/>} ></Route>
-
                     </Routes>
                 </div>
             </div>
