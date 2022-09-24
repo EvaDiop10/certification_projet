@@ -2,6 +2,8 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import TabPatientOpt from "./TabPatientOpt";
 import NavbarPatient from "./layout/NavbarPatient";
+import {useNavigate, Link} from "react-router-dom";
+
 
 const PatientOpt = ()=>{
 

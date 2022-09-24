@@ -121,13 +121,13 @@ const Registrer = () =>{
                     </p>
                 </section>
             ):(
-        <section className="row m-auto registrer container  p-5">
+        <section className="col-6 m-auto registrer container  p-5">
             <div className=''>
             <p ref={errRef} className={errMessage ? "errmsg" : "offscreen"} aria-live="assertive">{errMessage}</p>
             <h1>Inscription</h1>
             <form onSubmit={handleSubmit} className="p-5">
-                <div>
-                    <div className="mb-3">
+                <div className="">
+                    <div className="mb-3 ">
                         <label className="mx-2">
                             <span className={validName ? "valid" : "d-none"}>
                                 <i className="bi bi-check-all text-success"></i>

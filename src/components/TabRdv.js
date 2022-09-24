@@ -5,16 +5,13 @@ const TabRdv = (props) =>{
     let {rdv} = props
     const navigate = useNavigate();
 
-    const handleModifier = (e) => {
+    const handleAdd = (e) => {
         e.preventDefault()
-        axios.get(`http://127.0.0.1:8000/api/rendez-vous/${rdv.id}`)
-        navigate(`/rendez-vous/edit/${rdv.id}/`)
+        axios.post(`http://127.0.0.1:8000/api/rendez-vous/`)
+        navigate(`/rendez-vous/`)
     }
 
-    const handleSupprimer = (e) => {
-        e.preventDefault()
-        axios.delete(`http://127.0.0.1:8000/api/rendez-vous/${rdv.id}`)
-    }
+
 
     const handleSee = (e) =>{
         e.preventDefault()
@@ -38,9 +35,7 @@ const TabRdv = (props) =>{
                     {/*<Link className="btn-modifier btn text-success  fw-light " to={`edit/${rdv.id}`} aria-current="page" >*/}
                     {/*    <i onClick={handleModifier} className="bi bi-pencil-square "></i>*/}
                     {/*</Link>*/}
-                    {/*<button onClick={handleSupprimer} className="btn-supprimer btn fw-light text-danger" to={`rendez-vous/edit/${rdv.id}`}>*/}
-                    {/*    <i className="bi  bi-trash-fill"></i>*/}
-                    {/*</button>*/}
+                   
                     <Link to={`/voir/${rdv.id}`} >
                         <i onClick={handleSee}  className=" btn border  bi bi-three-dots-vertical text-black"></i>
                     </Link>

@@ -6,6 +6,8 @@
 }
 .App{
   background: #F0FBF4;
+  /*background: #CE0033;*/
+  max-height: 100vh;
 }
 .cardUser{
 }

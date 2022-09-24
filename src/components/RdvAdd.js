@@ -2,9 +2,33 @@ import {useEffect, useState, useRef} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import CardPatient from "./CardPatient";
+import  {useParams} from 'react-router-dom'
+
 const RdvAdd = () =>{
+    let id = useParams()
     let FormRef = useRef(null);
     let navigate = useNavigate()
+
+    const [patient, setPatient] = useState({
+        nom:"",
+        prenom:"",
+        sexe:"",
+        date_naissance:"",
+        adresse:"",
+        fonction:"",
+        CMU:"",
+        users_id:"",
+        telephone:""
+    })
+
+    useEffect(()=>{
+        loadPatient()
+    },[])
+
+    const loadPatient = async () => {
+        const result = await axios.get(`http://127.0.0.1:8000/api/patients`);
+        setPatient(result.data)
+    }
 
     const valeur = [
         'effectué',
@@ -16,12 +40,13 @@ const RdvAdd = () =>{
     })
 
     const valeur1 = [
-        "1",
-        "0"
+        1,
+        0
     ]
-    const list1 = valeur1.map((index,valeur)=>{
-        return {key:valeur,value:index}
+    const list1 = valeur1.map((index,valeur1)=>{
+        return {key:valeur1,value:index}
     })
+
 
 
     const [rdv, setRdv] = useState({
@@ -39,14 +64,14 @@ const RdvAdd = () =>{
 
     }
 
-    function handleSubmit(e) {
+     function handleSubmit(e) {
         e.preventDefault()
         const form = new FormData(FormRef.current)
        const rdv = Object.fromEntries(form.entries())
         console.log(rdv)
         axios.post('http://127.0.0.1:8000/api/rendez-vous',rdv)
         navigate("/gestion_rendez-vous")
-    }
+     }
 
     return(
 
@@ -75,8 +100,8 @@ const RdvAdd = () =>{
                     <div className="col-6 my-3">
                         <select placeholder="confirmation" className="form-select border border-success rounded-3 mb-3" id="sexe" name="confirmation"onChange={inputChange}  >
                             <option className="">Confirmation Rendez vous</option>
-                            <option  value={list1.value}>1</option>
-                            <option value={list1.value}>0</option>
+                            <option  value={1}>Validé</option>
+                            <option value={0}>Refusé</option>
                         </select>
                     </div>
                 </div>
@@ -89,7 +114,7 @@ const RdvAdd = () =>{
                         </select>
                     </div>
                     <div className="col-6 ">
-                    <input className="input-group border border-success rounded-3 mb-4 p-1" placeholder="Patients id" name="patients_id"onChange={inputChange} />
+                    <input className="input-group border border-success rounded-3 mb-4 p-1" placeholder="Patients id" name="patients_id"onChange={inputChange}/>
                     </div>
                 </div>
                     <textarea className="input-group my-3 border border-success rounded-3 mb-3 p-1"  placeholder="Description" name="description"onChange={inputChange} />

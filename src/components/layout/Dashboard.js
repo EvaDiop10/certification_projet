@@ -12,7 +12,8 @@ const Dashboard = () =>{
 
     return(
 
-            <div className="dashboard navbarnav  navbar navbar-expand-lg d-flex flex-column flex-shrink-0 p-1 text-white   " >
+            <div className="dashboard navbarnav  navbar navbar-expand-lg d-flex flex-column flex-shrink-0 p-1 text-white bg-red-800"
+            >
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -24,11 +25,13 @@ const Dashboard = () =>{
                     </a>
                     <img src={logo} alt="ll" className="w-50 h-75  my-3 mx-5"/>
                 </div>
-                <div className="">
+                <div className="my-5"
+                     style={{width:"180px",
+                     }}>
                     <hr></hr>
                 </div>
                 <div className="">
-                    <ul className="nav navbar-nav me-auto mb-2 mb-lg-0 nav-pills flex-column mb-auto">
+                    <ul className="nav navbar-nav  navbar-expand-lg me-auto mb-2 mb-lg-0 nav-pills flex-column mb-auto">
                         <li className="nav-item ">
                             <Link to="/" className="nav-link text-white textNav" aria-current="page">
                                 <img src={logo2} alt="cc " className="mx-2 w-25 h-25"/>
@@ -51,7 +54,7 @@ const Dashboard = () =>{
 
                 </div>
                         <div className="dropdown my-5">
-                            <div className="">
+                            <div className="my-5">
                                 <hr></hr>
                             </div>
                             <Link to="#" className="nav-link text-white textNav">

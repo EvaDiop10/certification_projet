@@ -35,10 +35,10 @@ const TabRdvOpt = (props) =>{
                 <td>{rdv.statut}</td>
                 <td>{rdv.patients_id}</td>
                 <td>
-                    <Link className="btn-modifier btn text-success  fw-light " to={`gestion_rendez-vous/edit/${rdv.id}`} aria-current="page" >
+                    <Link className="btn-modifier btn text-success  fw-light " to={`rendez-vous/edit/${rdv.id}`} aria-current="page" >
                         <i onClick={handleModifier} className="bi bi-pencil-square "></i>
                     </Link>
-                    <button onClick={handleSupprimer} className="btn-supprimer btn fw-light text-danger" to={`gestion_rendez-vous/edit/${rdv.id}`}>
+                    <button onClick={handleSupprimer} className="btn-supprimer btn fw-light text-danger" to={`rendez-vous/edit/${rdv.id}`}>
                         <i className="bi  bi-trash-fill"></i>
                     </button>
                     <Link to={`/voir/${rdv.id}`} >

@@ -8,13 +8,15 @@ import doctor  from '../asset/doctor.png'
 import MedecinList from '../components/MedecinList'
 import UserCard from '../components/UserCard'
 import card_bg from "../asset/card_bg.png"
-
+import axios from "../components/api/Axios"
 
 const Accueil = () => {
+
+
     return(
             <div>
                 <div className="row ">
-                    <div className="col-2 col-lg-2 col-md-2 col-sm-2">
+                    <div className="col-2 col-lg-2 col-md-2 col-sm-2 h-full scroll-y bg-red-800">
                         <Dashboard/>
                     </div>
                     <div className="col-7 col-lg-7 col-md-7 col-sm-7 my-3">

@@ -16,6 +16,7 @@ import Registrer from "../src/components/Registrer"
 import Login from "../src/components/Login"
 import  useAuth from "../src/components/useAuth"
 import RdvEdit from "../src/components/RdvEdit"
+import DoctorList from "../src/components/DoctorList"
 
 function App() {
     // const {getToken} = useAuth();
@@ -30,6 +31,7 @@ function App() {
                         <Route exact path="/" element={<Accueil to="/ "/> }></Route>
                         <Route path="/connexion" element={<Login to="/connexion"/>}></Route>
                         <Route path="/inscription" element={<Registrer to="/inscription"/>}></Route>
+                        <Route path="/medecins/list" element={<DoctorList to="/medecins/list"/>}></Route>
                         <Route path="/gestion_patients" element={<GestionPatient to="gestion_patients"/> }></Route>
                         <Route path="/patients/list" element={<ListPatient to="/patients/list "/>}></Route>
                         <Route path="/patients/details" element={<ListPatient to="/patients/details "/>}></Route>
@@ -38,6 +40,7 @@ function App() {
                         <Route path={`/patients/voir/:id`} element={<PatientFiche to={`/patients/voir/:id`}/>} ></Route>
                         <Route path="/gestion_rendez-vous" element={<GestionRdv to="gestion_rendez-vous"/> }></Route>
                         <Route path="/ajouter_rendez-vous" element={<RdvAdd to='ajouter_rendez-vous' /> }></Route>
+                        <Route path="/ajouter_rendez-vous/:id" element={<RdvAdd to='ajouter_rendez-vous/:id' /> }></Route>
                         <Route path={`rendez-vous/edit/:id`} element={<RdvEdit to={`rendez-vous/edit/:id`} />}></Route>
                         <Route path={`/rendez-vous/voir/:id`} element={<FicheRdv to={`/rendez-vous/voir/:id`}/>} ></Route>
                     </Routes>

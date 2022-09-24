@@ -39,6 +39,7 @@ const RdvEdit = () => {
         statut:"",
         patients_id:"",
     })
+
     useEffect(()=>{
         loadRdv()
     },[])
@@ -47,15 +48,16 @@ const RdvEdit = () => {
         const result = await axios.get(`http://127.0.0.1:8000/api/rendez-vous/${id}`);
         setRdv(result.data)
     }
+
     function handleEdit (e) {
         e.preventDefault()
         const form = new FormData(formRef.current);
         const rdv = Object.fromEntries(form.entries())
         axios.patch(`http://127.0.0.1:8000/api/rendez-vous/${id}`,rdv)
             .then((res) => console.log(res))
-        console.log(rdv)
-    }
 
+    }
+    
     return(
         <div className="row">
             <div className=" ">
@@ -95,7 +97,7 @@ const RdvEdit = () => {
                             <input className="input-group border border-success rounded-3 mb-4 p-1" defaultValue={rdv.patients_id} placeholder="Patients id" name="patients_id" />
                         </div>
                     </div>
-                    <textarea className="input-group my-3 border border-success rounded-3 mb-3 p-1" defaultValue={rdv.description}  placeholder="Description" name="description" />
+                    <textarea className="input-group my-3 border border-success rounded-3 mb-3 p-1"  placeholder="Description" name="description" >{rdv.description}</textarea>
                     <button className="my-3 btn btn-success fw-light border-success text-white  border border-success rounded-3 mb-3" >Modifier Rendez-vous</button>
                 </form>
             </div>

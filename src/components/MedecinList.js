@@ -1,5 +1,5 @@
 import user from "../asset/Vector.png"
-
+import DoctorList from "../components/DoctorList"
 const MedecinList = () => {
 
     return(
@@ -13,6 +13,9 @@ const MedecinList = () => {
                     disponibilité
                 </div>
             </div>
+            {/*<div>*/}
+            {/*    <DoctorList/>*/}
+            {/*</div>*/}
         </div>
     )
 }

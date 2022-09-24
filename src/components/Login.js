@@ -18,6 +18,8 @@ const LoginForm = () =>{
     const [password,setPassword] =  useState('');
     const [errMessage,setErrormessage] =  useState('');
     const [success,setSuccess] =  useState(false);
+    const roles = 1
+
 
     useEffect(()=>{
         useref.current.focus();
@@ -53,28 +55,7 @@ const LoginForm = () =>{
             errRef.current.focus();
 
     }
-
-
-    // const handleSubmit = async (e)  =>{
-    //     e.preventDefault();
-    //     try {
-    //         const response = await axios.post(LOGIN_URL,
-    //             JSON.stringify({email, password}),
-    //         {
-    //             headers:{'Content-type':'application/json'},
-    //             withCredentials: false
-    //         }
-    //         );
-    //         console.log(JSON.stringify(response?.data));
-    //         const accessToken = response?.data.accessToken;
-    //         const roles= response?.data.roles;
-    //         setAuth({email,password,roles,accessToken})
-    //         setUser('');
-    //         setPassword('');
-    //         setSuccess(true)
-    //
-    //     }
-    // }
+    
     }
 
     return (
@@ -84,7 +65,13 @@ const LoginForm = () =>{
                     <h1>Vous etes connecté!</h1>
                     <br/>
                     <p>
-                        <Link to="/">Accueil</Link>
+                        {roles?(
+                            <Link to="http://localhost:3000/gestion_rendez-vous">Accueil</Link>
+                            ):
+                            (
+                                <Link to="http://localhost:3000/">Accueil</Link>
+                            )
+                            }
                     </p>
                 </section>
             ) : (

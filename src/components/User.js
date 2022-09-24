@@ -21,11 +21,6 @@ const User = () => {
             }
         }
         getUsers()
-        
-        return () =>{
-            isMonted = false;
-            controller.abort();
-        }
     },[])
 
     return(

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import TabRdvOpt from "./TabRdvOpt";
+import TabRdv from "./TabRdv";
 import NavbarPatient from "./layout/NavbarPatient";
 
 const ListRdv = ()=>{
@@ -13,7 +13,7 @@ const ListRdv = ()=>{
 
     },[])
     return(
-        <div className="bg-white p-1 rounded-3 shadow-sm">
+        <div className="bg-white p-1 rounded-3 shadow-sm h-full">
             <h4 className="text-bold">Liste de Rendez-vous</h4>
             <table className="table  border-0">
                 <thead>
@@ -31,7 +31,7 @@ const ListRdv = ()=>{
                 </thead>
                 <tbody className="mb-5 border-0 bg-white rounded-3" >
                 {data.map((rdv)=>(
-                        <TabRdvOpt rdv={rdv} key={rdv.id}/>
+                        <TabRdv rdv={rdv} key={rdv.id}/>
                     )
                 )}
                 </tbody>

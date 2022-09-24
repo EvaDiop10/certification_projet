@@ -2,7 +2,7 @@ import  {BrowserRouter as Router, Link, Route, Routes,useNavigate} from "react-r
 import doctor  from '../asset/doctor.png'
 
 
-const CardMedecin = (props) => {
+const TabMedecin = (props) => {
     let {medecin} = props
     return(
         <div>
@@ -13,15 +13,14 @@ const CardMedecin = (props) => {
                             <img src={doctor} className="card-img"/>
                         </div>
                         <div  className="col-6">
-                            <p className="fw-bold">{medecin?.id}</p>
-                            <p className="fw-bold">{medecin?.etat === 0 ? "Valide"  : "Invalide" }</p>
-                            <p className="text-success">{medecin?.presence === 0 ? "Présent" : "Absent"}</p>
-                            <p className="text-success">{medecin?.specialite?.libelle}</p>
+                            <p className="fw-bold"></p>
+                            <p className="fw-bold"></p>
+                            <p className="text-success"></p>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-6">
-                          <p>Jours</p>
+                            <p>Jours</p>
                         </div>
                         <div  className="col-6 my-2">
                             <p>aaaa</p>
@@ -34,4 +33,4 @@ const CardMedecin = (props) => {
         </div>
     )
 }
-export default CardMedecin;
+export default TabMedecin;
